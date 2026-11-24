@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sangeet Spin Wheel</title>
-<meta name="description" content="Spin the wheel at the sangeet and take on a fun challenge: dance, sing, act and more.">
+<title>Rahul &amp; Madhu · Sangeet Spin Wheel</title>
+<meta name="description" content="Rahul and Madhu's sangeet: spin the wheel and take on a fun challenge.">
 <meta name="theme-color" content="#7a0b6e">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,12 @@
     --gold: #ffd23f;
     --maroon: #5a0b3c;
     --ink: #3b0530;
-    --size: min(88vw, 56vh, 580px);
+    --size: min(92vw, 64vh, 720px);
     --display: "Baloo 2", "Poppins", system-ui, sans-serif;
     --body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
   @supports (height: 1dvh) {
-    :root { --size: min(88vw, 56dvh, 580px); }
+    :root { --size: min(92vw, 64dvh, 720px); }
   }
 
   * { box-sizing: border-box; }
@@ -52,7 +52,7 @@
   }
   .strand {
     display: flex; flex-direction: column; align-items: center;
-    font-size: clamp(14px, 2vw, 24px); line-height: .88;
+    font-size: clamp(13px, 1.7vw, 20px); line-height: .88;
     transform-origin: top center;
     animation: sway 3.6s ease-in-out infinite alternate;
     filter: drop-shadow(0 3px 3px rgba(60, 0, 40, .35));
@@ -61,7 +61,7 @@
 
   .floaties { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
   .floaties span {
-    position: absolute; bottom: -12vh; opacity: .5;
+    position: absolute; bottom: -12vh; opacity: .35;
     animation: rise linear infinite;
   }
   @keyframes rise {
@@ -71,7 +71,7 @@
 
   .popper {
     position: fixed; bottom: 10px; z-index: 6;
-    font-size: clamp(40px, 7vw, 80px); line-height: 1;
+    font-size: clamp(40px, 6vw, 72px); line-height: 1;
     filter: drop-shadow(0 6px 8px rgba(40, 0, 40, .45));
     transition: transform .15s;
   }
@@ -102,33 +102,37 @@
   main {
     position: relative; z-index: 1;
     display: flex; flex-direction: column; align-items: center;
-    padding: clamp(64px, 9vw, 92px) 16px 110px;
+    padding: clamp(60px, 7.4vw, 92px) 16px 110px;
     overflow-x: hidden; overflow-x: clip;
   }
   @media (max-width: 560px) {
     .sound { top: 12px; right: 10px; padding: 9px 11px; }
     .sound .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    main { padding-top: 74px; }
+    main { padding-top: 66px; }
   }
   header { text-align: center; }
+  .couple {
+    margin: 0;
+    font-family: var(--display); font-weight: 800; line-height: 1.1;
+    font-size: clamp(24px, 3.8vw, 36px);
+    color: var(--gold);
+    text-shadow: 0 2px 0 #7a0b5e, 0 4px 0 #4a0a56, 0 10px 18px rgba(40, 0, 50, .5);
+  }
+  .couple span { font-size: .8em; margin: 0 .15em; }
   h1 {
     margin: 0;
-    font-family: var(--display); font-weight: 800; line-height: 1;
-    font-size: clamp(34px, 6.4vw, 62px);
+    font-family: var(--display); font-weight: 800; line-height: 1.05;
+    font-size: clamp(22px, 3.4vw, 34px);
     color: #fff8d6;
-    text-shadow: 0 3px 0 #c2185b, 0 6px 0 #7a0b5e, 0 12px 24px rgba(40, 0, 50, .5);
+    text-shadow: 0 2px 0 #c2185b, 0 4px 0 #7a0b5e, 0 10px 20px rgba(40, 0, 50, .5);
     text-wrap: balance;
-  }
-  .tagline {
-    margin: 8px 0 0; font-weight: 500;
-    font-size: clamp(14px, 2.2vw, 18px); color: #ffe9f4;
   }
 
   /* ---------- Wheel ---------- */
-  .stage { position: relative; margin-top: clamp(26px, 5vw, 40px); width: var(--size); height: var(--size); }
+  .stage { position: relative; margin-top: clamp(22px, 3.4vw, 30px); width: var(--size); height: var(--size); }
   .sunburst {
     position: absolute; inset: -22%; border-radius: 50%; pointer-events: none;
-    background: repeating-conic-gradient(rgba(255, 255, 255, .16) 0 7.5deg, transparent 7.5deg 15deg);
+    background: repeating-conic-gradient(rgba(255, 255, 255, .18) 0 7.5deg, transparent 7.5deg 15deg);
     -webkit-mask: radial-gradient(closest-side, #000 55%, transparent 100%);
             mask: radial-gradient(closest-side, #000 55%, transparent 100%);
     animation: turn 70s linear infinite;
@@ -137,14 +141,27 @@
   .rim {
     position: absolute; inset: 0; border-radius: 50%;
     background: conic-gradient(#ffe27a, #ff9d00, #ffe27a, #d97a00, #ffe27a, #ff9d00, #ffe27a);
-    box-shadow: 0 0 0 4px #7a3b00, 0 18px 50px rgba(40, 0, 50, .6), 0 0 60px rgba(255, 210, 63, .55);
+    box-shadow: 0 0 0 4px #7a3b00, 0 18px 50px rgba(40, 0, 50, .6), 0 0 90px rgba(255, 220, 90, .7);
   }
   #wheel {
     position: absolute; inset: 3.4%; width: 93.2%; height: 93.2%;
     border-radius: 50%; will-change: transform; cursor: pointer;
   }
+  /* Spotlight on the slice the wheel landed on: everything else dims. */
+  .spot {
+    position: absolute; inset: 3.4%; z-index: 2; border-radius: 50%; pointer-events: none;
+    background: conic-gradient(from var(--from, 0deg), transparent 0 var(--arc, 17deg), rgba(35, 0, 45, .64) 0);
+    opacity: 0; transition: opacity .45s;
+  }
+  .spot::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    background: conic-gradient(from var(--from, 0deg), rgba(255, 255, 255, .38) 0 var(--arc, 17deg), transparent 0);
+    animation: glow .7s ease-in-out infinite alternate;
+  }
+  .spot.on { opacity: 1; }
+  @keyframes glow { from { opacity: 0; } to { opacity: 1; } }
   .bulb {
-    position: absolute; width: 2.5%; height: 2.5%; border-radius: 50%;
+    position: absolute; width: 2.3%; height: 2.3%; border-radius: 50%;
     transform: translate(-50%, -50%);
     background: #fff; box-shadow: 0 0 8px 3px rgba(255, 255, 255, .9);
     animation: twinkle 1s steps(1) infinite;
@@ -155,7 +172,7 @@
     50%  { background: #ff5fa8; box-shadow: 0 0 3px 1px rgba(255, 95, 168, .6); }
   }
   .pointer {
-    position: absolute; top: -7.5%; left: 50%; width: 10.5%; z-index: 4;
+    position: absolute; top: -6.5%; left: 50%; width: 9.5%; z-index: 4;
     transform: translateX(-50%) rotate(var(--wig, 0deg));
     transform-origin: 50% 28%;
     filter: drop-shadow(0 5px 5px rgba(40, 0, 40, .55));
@@ -163,22 +180,23 @@
   }
   .hub {
     position: absolute; top: 50%; left: 50%; z-index: 3;
-    width: 23%; height: 23%; border-radius: 50%;
+    width: 20%; height: 20%; border-radius: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--display); font-weight: 800; letter-spacing: .04em;
-    font-size: calc(var(--size) * .058); color: var(--maroon);
+    font-size: calc(var(--size) * .052); color: var(--maroon);
     background: radial-gradient(circle at 35% 30%, #fff7c2, #ffd23f 45%, #ff9500 100%);
     box-shadow: 0 0 0 5px #fff, 0 0 0 9px #c2185b, 0 8px 18px rgba(40, 0, 40, .5);
     transition: transform .15s;
   }
   .hub:hover:not(:disabled) { transform: translate(-50%, -50%) scale(1.07); }
   .hub:disabled { cursor: default; }
+  .hub.count { font-size: calc(var(--size) * .085); }
 
   /* ---------- Controls ---------- */
   .cta {
-    margin-top: clamp(28px, 5vw, 40px);
-    padding: 14px 40px; border-radius: 999px;
-    font-family: var(--display); font-weight: 800; font-size: clamp(20px, 3.4vw, 26px);
+    margin-top: clamp(24px, 3.6vw, 32px);
+    padding: 12px 38px; border-radius: 999px;
+    font-family: var(--display); font-weight: 800; font-size: clamp(19px, 3vw, 24px);
     color: var(--maroon);
     background: linear-gradient(180deg, #fff3a3, #ffc400 55%, #ff9500);
     box-shadow: 0 7px 0 #b85400, 0 16px 28px rgba(40, 0, 50, .45);
@@ -186,17 +204,17 @@
   }
   .cta:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 9px 0 #b85400, 0 20px 30px rgba(40, 0, 50, .45); }
   .cta:active:not(:disabled) { transform: translateY(5px); box-shadow: 0 2px 0 #b85400, 0 8px 14px rgba(40, 0, 50, .45); }
-  .cta:disabled { filter: saturate(.6) brightness(.92); cursor: default; }
-  .hint { margin: 16px 0 0; font-size: 13px; color: #ffe1ef; }
+  .cta:disabled { filter: saturate(.7) brightness(.95); cursor: default; }
+  .hint { margin: 16px 0 0; font-size: 13px; color: #ffe1ef; text-align: center; }
 
   /* ---------- Challenge list ---------- */
-  .list { width: min(100%, 960px); margin-top: 56px; }
+  .list { width: min(100%, 1040px); margin-top: 56px; }
   .list h2 {
     margin: 0 0 16px; text-align: center;
     font-family: var(--display); font-weight: 800; font-size: clamp(24px, 4vw, 32px);
     color: #fff8d6; text-shadow: 0 3px 0 #7a0b5e;
   }
-  .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
   .cards li {
     display: flex; gap: 12px; align-items: flex-start;
     padding: 14px; border-radius: 16px;
@@ -206,7 +224,9 @@
   }
   .cards .em { font-size: 30px; line-height: 1; }
   .cards strong { display: block; font-family: var(--display); font-weight: 800; font-size: 19px; line-height: 1.15; }
+  .cards span.k { display: block; margin-top: 2px; font-size: 14px; font-weight: 600; line-height: 1.4; }
   .cards span.d { display: block; margin-top: 3px; font-size: 13.5px; line-height: 1.45; color: #5c2a52; }
+  .foot { margin: 40px 0 0; font-size: 14px; color: #ffe9f4; text-align: center; }
 
   /* ---------- Result modal ---------- */
   .modal {
@@ -218,8 +238,8 @@
   }
   .modal.open { opacity: 1; visibility: visible; }
   .card {
-    position: relative; width: min(100%, 460px); text-align: center;
-    padding: 30px 26px 26px; border-radius: 28px;
+    position: relative; width: min(100%, 500px); text-align: center;
+    padding: 28px 26px 26px; border-radius: 28px;
     color: var(--ink); background: #fffaf0;
     border: 6px solid transparent;
     background-image: linear-gradient(#fffaf0, #fffaf0), linear-gradient(135deg, #ff2e93, #ffb300, #00c2c7, #8a3ffc);
@@ -229,19 +249,20 @@
     transition: transform .45s cubic-bezier(.2, 1.5, .4, 1);
   }
   .modal.open .card { transform: none; }
-  .card .big { font-size: clamp(72px, 20vw, 104px); line-height: 1; display: inline-block; animation: bob 1s ease-in-out infinite alternate; }
+  .card .big { font-size: clamp(68px, 18vw, 96px); line-height: 1; display: inline-block; animation: bob 1s ease-in-out infinite alternate; }
   @keyframes bob { from { transform: translateY(0) rotate(-6deg); } to { transform: translateY(-10px) rotate(6deg); } }
-  .kicker { margin: 12px 0 0; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #b3117c; }
+  .kicker { margin: 10px 0 0; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #b3117c; }
   .card h3 {
     margin: 2px 0 0; font-family: var(--display); font-weight: 800; line-height: 1.05;
-    font-size: clamp(32px, 8vw, 44px); color: #c2185b;
+    font-size: clamp(30px, 7.4vw, 42px); color: #c2185b;
   }
-  .card p.desc { margin: 10px 0 0; font-size: 16px; line-height: 1.55; }
+  .card p.task { margin: 12px 0 0; font-size: clamp(18px, 4.6vw, 21px); font-weight: 600; line-height: 1.4; text-wrap: balance; }
+  .card p.desc { margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #5c2a52; }
   .chip {
     display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 999px;
     font-size: 13.5px; font-weight: 600; color: #6a3a00; background: #ffe7a0;
   }
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
   .btn {
     padding: 11px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
     transition: transform .12s;
@@ -253,7 +274,7 @@
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
   @media (prefers-reduced-motion: reduce) {
-    .strand, .floaties span, .sunburst, .bulb, .card .big { animation: none; }
+    .strand, .floaties span, .sunburst, .bulb, .card .big, .spot::after { animation: none; }
   }
 </style>
 </head>
@@ -272,14 +293,15 @@
 
 <main>
   <header>
+    <p class="couple">Rahul <span aria-hidden="true">💞</span><span class="sr">and</span> Madhu</p>
     <h1>Sangeet Spin Wheel</h1>
-    <p class="tagline">Spin it. Own it. Dance it! 💃🕺</p>
   </header>
 
   <div class="stage" id="stage">
     <div class="sunburst" aria-hidden="true"></div>
     <div class="rim" aria-hidden="true"></div>
     <canvas id="wheel" aria-hidden="true"></canvas>
+    <div class="spot" id="spot" aria-hidden="true"></div>
     <div id="bulbs" aria-hidden="true"></div>
     <svg class="pointer" id="pointer" viewBox="0 -12 60 92" aria-hidden="true">
       <defs>
@@ -294,20 +316,22 @@
   </div>
 
   <button class="cta" id="spin" type="button">🎡 Spin the Wheel</button>
-  <p class="hint">Tap the wheel or press Space. Whatever it lands on, you do!</p>
+  <p class="hint">Spin it. Own it. Dance it! 💃🕺 Tap the wheel or press Space.</p>
   <p class="sr" id="live" aria-live="polite"></p>
 
   <section class="list" aria-labelledby="list-h">
     <h2 id="list-h">Tonight's challenges</h2>
     <ul class="cards" id="cards"></ul>
   </section>
+  <p class="foot">With love, for Rahul &amp; Madhu 💖</p>
 </main>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="res-title" aria-hidden="true">
   <div class="card">
     <span class="big" id="res-emoji" aria-hidden="true">💃</span>
     <p class="kicker">Your challenge is</p>
-    <h3 id="res-title">Dance Off</h3>
+    <h3 id="res-title"></h3>
+    <p class="task" id="res-task"></p>
     <p class="desc" id="res-desc"></p>
     <span class="chip" id="res-chip"></span>
     <div class="actions">
@@ -321,32 +345,78 @@
 (() => {
   'use strict';
 
+  // How long the wheel rests on its slice before the challenge popup appears.
+  const REVEAL_DELAY_S = 10;
+
+  // e: emoji, l: label on the wheel, t: popup title, k: the challenge, d: the cute line, chip: the tag.
   const CHALLENGES = [
-    { e: '💃', t: 'Dance Off',      l: 'Dance\nOff',      c: '#ff2e93', chip: '⏱ 30 seconds',
-      d: 'Hit the floor and show us your best filmi moves. No shy steps allowed!' },
-    { e: '🎤', t: 'Sing It!',       l: 'Sing It!',        c: '#ff8a00', chip: '🎶 One chorus',
-      d: 'Sing the chorus of your favourite wedding song. Bonus cheers if the crowd joins in!' },
-    { e: '🎬', t: 'Filmi Dialogue', l: 'Filmi\nDialogue', c: '#ffd400', chip: '🎭 Full drama',
-      d: 'Deliver a famous movie dialogue with all the drama: the look, the pause, the punch.' },
-    { e: '🕺', t: 'Hook Step',      l: 'Hook\nStep',      c: '#1fc77a', chip: '🤫 No music',
-      d: 'Do the hook step of a hit song without any music. The crowd has to guess the song!' },
-    { e: '👫', t: 'Jodi Dance',     l: 'Jodi\nDance',     c: '#00b8c4', chip: '⏱ 20 seconds',
-      d: 'Grab a partner, be it spouse, cousin or bestie, and give us a couple dance.' },
-    { e: '🥁', t: 'Dhol Beats',     l: 'Dhol\nBeats',     c: '#2f7bff', chip: '🔥 Till the host says stop',
-      d: 'Bhangra or kuthu, your pick! Go all out with full energy.' },
-    { e: '😂', t: 'Mimicry',        l: 'Mimicry',         c: '#8a3ffc', chip: '💕 Keep it loving',
-      d: 'Imitate the bride, the groom or a family member. The crowd guesses who it is!' },
-    { e: '🎭', t: 'Dumb Charades',  l: 'Dumb\nCharades',  c: '#e0218a', chip: '⏱ 45 seconds',
-      d: 'Act out a movie name without saying a word. Your table has to guess it in time.' },
-    { e: '💌', t: 'Shayari Time',   l: 'Shayari\nTime',   c: '#ff4b3e', chip: '❤️ From the heart',
-      d: 'Recite a two-line shayari, a poem or a heartfelt wish for the happy couple.' },
-    { e: '🐍', t: 'Nagin Dance',    l: 'Nagin\nDance',    c: '#ffb300', chip: '⏱ 20 seconds',
-      d: "It's not a sangeet without one. Bring out the legendary nagin dance!" },
-    { e: '👑', t: 'Ramp Walk',      l: 'Ramp\nWalk',      c: '#7ed321', chip: '📸 End with a pose',
-      d: 'Walk the ramp like a showstopper and strike your best pose at the end.' },
-    { e: '🎁', t: 'Lucky Pass',     l: 'Lucky\nPass',     c: '#5b3df5', chip: '😎 You are safe',
-      d: 'Lucky you! Pick anyone in the hall to spin the wheel and take the next challenge.' },
+    { e: '👰', l: 'Bride Dance', t: 'Bride Dance', chip: '⏱ 30 seconds',
+      k: 'Dance with the bride for 30 seconds.',
+      d: 'The star of the night is all yours for half a minute. Make her twirl!' },
+    { e: '🕺', l: 'Tamil Hook Step', t: 'Tamil Hook Step', chip: '🎶 Your pick',
+      k: 'Do the hook step of a Tamil song.',
+      d: 'Pick your favourite and own it like you choreographed it yourself.' },
+    { e: '🤵', l: "Groom's Side", t: "Groom's Side Jodi", chip: '🤝 New family',
+      k: "Dance with someone from the groom's side.",
+      d: 'Two families, one dance floor. Go find your new favourite relative!' },
+    { e: '🤫', l: 'No Music!', t: 'No Music Dance', chip: '⏱ 15 seconds',
+      k: 'Dance without music for 15 seconds.',
+      d: 'No beat, no problem. The song is playing in your head anyway.' },
+    { e: '👯', l: 'Gang of 3', t: 'Gang of 3', chip: '🙋 3 recruits',
+      k: 'Get 3 people to join your dance.',
+      d: 'Dancing alone is fun, a gang is better. Pull them in, no excuses!' },
+    { e: '🎤', l: "Crowd's Song", t: "Crowd's Song", chip: '🎶 Crowd picks',
+      k: 'Sing a Tamil song chosen by the crowd.',
+      d: 'They pick, you sing. Bathroom-singer voices are warmly welcome.' },
+    { e: '😎', l: 'Ramp Walk', t: 'Ramp Walk', chip: '📸 End with a pose',
+      k: "Walk like a ramp model to the DJ's music.",
+      d: 'Chin up, shoulders back. The aisle is your runway tonight.' },
+    { e: '💭', l: 'Bride: 1st Look', t: 'First Impression: Bride', chip: '💕 Honest and sweet',
+      k: 'Reveal your first impression of the bride.',
+      d: 'Be honest, be sweet. She is listening very closely!' },
+    { e: '💬', l: 'Groom: 1st Look', t: 'First Impression: Groom', chip: '😄 Spill it',
+      k: 'Reveal your first impression of the groom.',
+      d: 'What did you really think when you first met him? Out with it!' },
+    { e: '💍', l: 'Marriage Advice', t: 'Married-Life Advice', chip: '📝 One golden tip',
+      k: 'Share one piece of married-life advice.',
+      d: 'Wise, funny or both. The couple is taking notes.' },
+    { e: '💖', l: '3 Loves: Bride', t: '3 Things: Bride', chip: '⏱ 10 seconds',
+      k: 'Say 3 things you love about the bride in 10 seconds.',
+      d: 'Quick, quick! Compliments only, and the clock is ticking.' },
+    { e: '💙', l: '3 Loves: Groom', t: '3 Things: Groom', chip: '⏱ 10 seconds',
+      k: 'Say 3 things you love about the groom in 10 seconds.',
+      d: 'Three compliments, ten seconds. Make him blush!' },
+    { e: '✋', l: 'Hook Step ×5', t: 'Hook Step ×5', chip: '🖐 5 dancers',
+      k: 'Get 5 people to do the same hook step.',
+      d: 'You are the choreographer now. Five dancers, one step, perfect sync!' },
+    { e: '🎨', l: 'Colour Twins', t: 'Colour Twins', chip: '👗 Same colour',
+      k: 'Find someone wearing the same colour and dance with them.',
+      d: 'Matching outfits deserve a matching dance. Go find your colour twin!' },
+    { e: '🙌', l: 'Crowd Step', t: 'Crowd Step', chip: '🏟 The whole hall',
+      k: 'Get the entire crowd to do one dance step.',
+      d: 'Everybody up! One step, the whole hall, and you lead the way.' },
+    { e: '🎬', l: 'Movie Scene', t: 'Movie Scene', chip: '🎭 Pick a co-star',
+      k: 'Pick someone and recreate a famous movie scene.',
+      d: 'Lights, camera, drama! Punch dialogues earn extra whistles.' },
+    { e: '💑', l: 'Couple Hook Step', t: 'Couple Hook Step', chip: '💞 Rahul and Madhu',
+      k: 'Get the bride and groom to do a hook step together.',
+      d: 'Your job is to convince them. Rahul and Madhu, the stage is yours!' },
+    { e: '📣', l: "Crowd's Dare", t: "Crowd's Dare", chip: '📣 Crowd decides',
+      k: 'Let the crowd choose your dare.',
+      d: "Your fate is in their hands. Be nice, crowd… or don't!" },
+    { e: '👸', l: "Bride's Dare", t: "Bride's Dare", chip: '👑 Her wish',
+      k: 'The bride chooses your dare.',
+      d: "Whatever she says, goes. It's her sangeet after all!" },
+    { e: '🤴', l: "Groom's Dare", t: "Groom's Dare", chip: '😈 His turn',
+      k: 'The groom chooses your dare.',
+      d: 'He has been waiting for this moment. Good luck!' },
+    { e: '🎁', l: "You're Safe!", t: "You're Safe!", chip: '😎 No dare',
+      k: "You're safe! Pick the next person to spin.",
+      d: 'Lucky you! Now choose your victim wisely.' },
   ];
+  // Seven colours over 21 slices: neighbours never match, including across the seam.
+  const SLICE = ['#ff2e93', '#ff8a00', '#ffd400', '#1fc77a', '#00b8c4', '#2f7bff', '#8a3ffc'];
+  CHALLENGES.forEach((ch, i) => { ch.c = SLICE[i % SLICE.length]; });
   const CONFETTI = ['#ff2e93', '#ffd400', '#00c2c7', '#8a3ffc', '#ff8a00', '#1fc77a', '#ffffff', '#ff4b3e'];
 
   const N = CHALLENGES.length;
@@ -357,7 +427,7 @@
   const $ = (id) => document.getElementById(id);
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const stage = $('stage'), wheel = $('wheel'), pointer = $('pointer');
+  const wheel = $('wheel'), pointer = $('pointer'), spot = $('spot');
   const hub = $('hub'), spinBtn = $('spin'), modal = $('modal'), live = $('live');
 
   /* ================= Sound ================= */
@@ -410,13 +480,24 @@
         try { localStorage.setItem('sangeet-sound', v ? 'on' : 'off'); } catch (_) {}
         if (!v && ctx) ctx.suspend();
       },
-      tick() {
+      // The last slow clicks are lower and heavier than the fast ones.
+      tick(heavy) {
         const now = performance.now();
         if (now - lastTick < 42) return;
         lastTick = now;
-        tone(1150, 0.045, { type: 'triangle', vol: 0.16, to: 620 });
+        if (heavy) tone(760, 0.075, { type: 'triangle', vol: 0.26, to: 400 });
+        else tone(1150, 0.045, { type: 'triangle', vol: 0.16, to: 620 });
       },
       whoosh() { noise(0.7, { vol: 0.16, from: 300, to: 3200, q: 1.4, type: 'bandpass' }); },
+      // A drum roll that swells while the wheel hangs on a peg.
+      roll(ms) {
+        const n = Math.max(4, Math.floor(ms / 58));
+        for (let i = 0; i < n; i++) {
+          const p = i / n;
+          noise(0.05, { vol: 0.05 + 0.2 * p, at: i * 0.058, from: 2600, to: 900 });
+          if (i % 2 === 0) tone(150, 0.05, { type: 'triangle', vol: 0.05 + 0.12 * p, at: i * 0.058 });
+        }
+      },
       pop(at = 0) {
         noise(0.22, { vol: 0.45, at, from: 6000, to: 500 });
         tone(190, 0.16, { type: 'sine', vol: 0.4, at, to: 60 });
@@ -425,6 +506,10 @@
         [523.25, 659.25, 783.99, 1046.5, 1318.5].forEach((f, i) =>
           tone(f, 0.26, { type: 'triangle', vol: 0.2, at: i * 0.09 }));
         [1046.5, 1318.5, 1568].forEach((f) => tone(f, 0.9, { type: 'sine', vol: 0.1, at: 0.5 }));
+      },
+      count() { tone(660, 0.08, { type: 'sine', vol: 0.09 }); },
+      reveal() {
+        [783.99, 1046.5, 1568].forEach((f, i) => tone(f, 0.3, { type: 'triangle', vol: 0.2, at: i * 0.1 }));
       },
       blip() { tone(880, 0.09, { type: 'sine', vol: 0.15, to: 1320 }); },
     };
@@ -470,7 +555,7 @@
       shade.addColorStop(1, 'rgba(0,0,0,.20)');
       c.fillStyle = shade;
       c.fill();
-      c.lineWidth = R * 0.008;
+      c.lineWidth = R * 0.007;
       c.strokeStyle = 'rgba(255,255,255,.85)';
       c.stroke();
 
@@ -480,21 +565,23 @@
 
       // Emoji near the rim, upright when its slice is under the pointer.
       c.save();
-      c.translate(R * 0.825, 0);
+      c.translate(R * 0.868, 0);
       c.rotate(Math.PI / 2);
       c.textAlign = 'center';
-      c.font = `${R * 0.15}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-      c.fillText(ch.e, 0, 0);
+      c.font = `${R * 0.104}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
+      c.fillText(ch.e, 0, R * 0.006);
       c.restore();
 
-      // Label, reading outward along the slice.
-      const lines = ch.l.split('\n');
-      const fs = R * 0.074, lh = fs * 1.02;
-      c.textAlign = 'right';
+      // Label, reading outward along the slice; shrunk to fit if it is long.
+      const maxW = R * 0.5;
+      let fs = R * 0.056;
       c.font = `800 ${fs}px "Baloo 2","Poppins",sans-serif`;
+      const w = c.measureText(ch.l).width;
+      if (w > maxW) { fs *= maxW / w; c.font = `800 ${fs}px "Baloo 2","Poppins",sans-serif`; }
+      c.textAlign = 'right';
       c.fillStyle = inkFor(ch.c);
-      if (c.fillStyle === '#ffffff') { c.shadowColor = 'rgba(40,0,40,.45)'; c.shadowBlur = R * 0.012; c.shadowOffsetY = R * 0.004; }
-      lines.forEach((ln, j) => c.fillText(ln, R * 0.715, (j - (lines.length - 1) / 2) * lh + fs * 0.06));
+      if (c.fillStyle === '#ffffff') { c.shadowColor = 'rgba(40,0,40,.5)'; c.shadowBlur = R * 0.012; c.shadowOffsetY = R * 0.004; }
+      c.fillText(ch.l, R * 0.785, fs * 0.07);
       c.restore();
     });
 
@@ -502,7 +589,7 @@
     for (let i = 0; i < N; i++) {
       const a = -Math.PI / 2 + i * ARC;
       c.beginPath();
-      c.arc(Math.cos(a) * R * 0.955, Math.sin(a) * R * 0.955, R * 0.022, 0, TAU);
+      c.arc(Math.cos(a) * R * 0.958, Math.sin(a) * R * 0.958, R * 0.019, 0, TAU);
       c.fillStyle = '#fff8d6';
       c.strokeStyle = '#7a3b00';
       c.lineWidth = R * 0.006;
@@ -512,7 +599,7 @@
 
   function buildBulbs() {
     const box = $('bulbs');
-    const count = 24;
+    const count = 28;
     for (let i = 0; i < count; i++) {
       const a = (i / count) * TAU;
       const b = document.createElement('i');
@@ -524,17 +611,22 @@
   }
 
   /* ================= Spin ================= */
-  let rotation = 0, spinning = false, lastIndex = -1, tickIdx = 0, wig = 0, settleRaf = 0, spins = 0;
+  let rotation = 0, spinning = false, waiting = false, lastIndex = -1, tickIdx = 0;
+  let wig = 0, settleRaf = 0, spins = 0, revealTimer = 0;
 
+  // The slice under the pointer. As the wheel turns, this counts down: k+1, k, k-1…
   const indexAt = (r) => Math.floor(mod(-r, TAU) / ARC);
 
-  // Short push-off, then a long smooth coast to a stop (velocity is continuous).
+  // Short push-off, then a long coast to a stop (velocity is continuous).
   const T0 = 0.07, TOTAL = T0 / 2 + (1 - T0) / 4;
-  function ease(t) {
+  function coast(t) {
     if (t < T0) return (t * t) / (2 * T0) / TOTAL;
     const u = (1 - t) / (1 - T0);
     return (T0 / 2 + ((1 - T0) / 4) * (1 - u * u * u * u)) / TOTAL;
   }
+  const sineInOut = (t) => 0.5 - Math.cos(Math.PI * t) / 2;
+  const sineOut = (t) => Math.sin((Math.PI / 2) * t);
+  const outBack = (t) => { const s = 1.3, u = t - 1; return 1 + (s + 1) * u * u * u + s * u * u; };
 
   function render() {
     wheel.style.transform = `rotate(${rotation}rad)`;
@@ -552,61 +644,128 @@
     settleRaf = requestAnimationFrame(step);
   }
 
-  function setBusy(b) {
-    spinBtn.disabled = hub.disabled = b;
-    spinBtn.textContent = b ? '🌀 Spinning…' : '🎡 Spin the Wheel';
-    hub.textContent = b ? '🤞' : 'SPIN';
+  function setState(mode, n) {
+    const busy = mode !== 'idle';
+    spinBtn.disabled = hub.disabled = busy;
+    hub.classList.toggle('count', mode === 'wait');
+    if (mode === 'spin') { spinBtn.textContent = '🌀 Spinning…'; hub.textContent = '🤞'; }
+    else if (mode === 'wait') { spinBtn.textContent = `🥁 Challenge in ${n}…`; hub.textContent = String(n); }
+    else { spinBtn.textContent = '🎡 Spin the Wheel'; hub.textContent = 'SPIN'; }
   }
 
+  function showSpot(k) {
+    spot.style.setProperty('--from', ((k * ARC + rotation) * 180 / Math.PI).toFixed(3) + 'deg');
+    spot.style.setProperty('--arc', (360 / N).toFixed(3) + 'deg');
+    spot.classList.add('on');
+  }
+
+  /*
+   * Every spin ends in one of three ways, so the last second is never predictable:
+   *   tip    – the wheel stalls right on a peg, hangs there, then tips over into the next slice
+   *   almost – it creeps up to the next peg as if to tip over, then rocks back and stays
+   *   plain  – a long, slow coast to a stop
+   * A position inside the winning slice is written as f: 0 where the slice arrives under the
+   * pointer, 1 where it would leave.
+   */
   function spin() {
-    if (spinning) return;
+    if (spinning || waiting) return;
     closeModal();
+    spot.classList.remove('on');
     spinning = true;
-    setBusy(true);
+    setState('spin');
     cancelAnimationFrame(settleRaf);
 
     let k;
     do { k = Math.floor(Math.random() * N); } while (k === lastIndex);
-    const jitter = rand(-0.34, 0.34);
-    const delta = mod(mod(-(k + 0.5 + jitter) * ARC, TAU) - mod(rotation, TAU), TAU);
-    const turns = reduced ? 2 : 6 + Math.floor(Math.random() * 3);
-    const from = rotation, to = rotation + delta + turns * TAU;
-    const dur = reduced ? 2600 : rand(6400, 7600);
-    const t0 = performance.now();
+    const r = Math.random();
+    const style = reduced ? 'plain' : r < 0.45 ? 'tip' : r < 0.8 ? 'almost' : 'plain';
+    const fEnd = style === 'tip' ? rand(0.17, 0.3) : style === 'almost' ? rand(0.78, 0.84) : rand(0.3, 0.7);
+
+    const delta = mod(mod(-(k + 1 - fEnd) * ARC, TAU) - mod(rotation, TAU), TAU);
+    const turns = reduced ? 2 : 5 + Math.floor(Math.random() * 3);
+    const end = rotation + delta + turns * TAU;
+    const at = (f) => end + (f - fEnd) * ARC;
+    const mainDur = reduced ? 2600 : rand(6200, 7400);
+
+    const segs = [];
+    if (style === 'tip') {
+      segs.push({ to: at(-0.045), dur: mainDur, ease: coast });
+      segs.push({ to: at(-0.006), dur: rand(1100, 1600), ease: sineInOut, bend: [-8, -26], roll: true });
+      segs.push({ to: end, dur: 1100, ease: outBack });
+    } else if (style === 'almost') {
+      segs.push({ to: at(0.86), dur: mainDur, ease: coast });
+      segs.push({ to: at(0.975), dur: rand(1300, 1800), ease: sineOut, bend: [-6, -25], roll: true });
+      segs.push({ to: end, dur: 1000, ease: sineInOut });
+    } else {
+      segs.push({ to: end, dur: mainDur, ease: coast });
+    }
+
+    let si = 0, segFrom = rotation, segT0 = performance.now();
+    let prevR = rotation, prevNow = segT0;
     tickIdx = indexAt(rotation);
     sfx.whoosh();
 
     const frame = (now) => {
-      const t = Math.min(1, (now - t0) / dur);
-      rotation = from + (to - from) * ease(t);
+      const seg = segs[si];
+      const t = Math.min(1, (now - segT0) / seg.dur);
+      rotation = segFrom + (seg.to - segFrom) * seg.ease(t);
+      const speed = Math.abs(rotation - prevR) / Math.max(1, now - prevNow); // rad per ms
+      prevR = rotation; prevNow = now;
+
       const idx = indexAt(rotation);
-      if (idx !== tickIdx) { tickIdx = idx; wig = -24; sfx.tick(); }
+      if (idx !== tickIdx) { tickIdx = idx; wig = -25; sfx.tick(speed < 0.0012); }
+      else if (seg.bend) { wig += (seg.bend[0] + (seg.bend[1] - seg.bend[0]) * t - wig) * 0.25; } // the peg leans on the pointer
       else wig *= 0.8;
       render();
-      if (t < 1) requestAnimationFrame(frame);
-      else finish(k);
+
+      if (t >= 1) {
+        si++;
+        if (si >= segs.length) { finish(); return; }
+        segFrom = rotation; segT0 = now;
+        if (segs[si].roll) sfx.roll(segs[si].dur);
+      }
+      requestAnimationFrame(frame);
     };
     requestAnimationFrame(frame);
   }
 
-  function finish(k) {
+  function finish() {
+    const k = indexAt(rotation); // read the slice off the wheel, so the popup always matches it
     rotation = mod(rotation, TAU);
     lastIndex = k;
     spinning = false;
     spins++;
     settlePointer();
-    setBusy(false);
-    const ch = CHALLENGES[k];
-    live.textContent = `Spin ${spins}: ${ch.t}. ${ch.d}`;
+    showSpot(k);
     sfx.win();
     celebrate();
-    setTimeout(() => openModal(ch), 420);
+    startReveal(CHALLENGES[k]);
+  }
+
+  function startReveal(ch) {
+    let left = reduced ? 3 : REVEAL_DELAY_S;
+    waiting = true;
+    setState('wait', left);
+    live.textContent = `The wheel stopped on ${ch.t}.`;
+    clearInterval(revealTimer);
+    revealTimer = setInterval(() => {
+      left--;
+      if (left > 0) { setState('wait', left); if (left <= 3) sfx.count(); return; }
+      clearInterval(revealTimer);
+      waiting = false;
+      setState('idle');
+      live.textContent = `Spin ${spins}: ${ch.t}. ${ch.k} ${ch.d}`;
+      sfx.reveal(); sfx.pop();
+      firePopper('L', reduced ? 20 : 70); firePopper('R', reduced ? 20 : 70);
+      openModal(ch);
+    }, 1000);
   }
 
   /* ================= Result modal ================= */
   function openModal(ch) {
     $('res-emoji').textContent = ch.e;
     $('res-title').textContent = ch.t;
+    $('res-task').textContent = ch.k;
     $('res-desc').textContent = ch.d;
     $('res-chip').textContent = ch.chip;
     modal.classList.add('open');
@@ -724,13 +883,13 @@
   function buildFloaties() {
     const box = $('floaties');
     const set = ['🎶', '✨', '💖', '🪔', '🎊', '💃', '🌸', '🎵', '⭐', '🕺'];
-    const count = window.innerWidth < 600 ? 10 : 18;
+    const count = window.innerWidth < 600 ? 8 : 14;
     for (let i = 0; i < count; i++) {
       const s = document.createElement('span');
       s.textContent = set[i % set.length];
       s.style.left = rand(2, 96).toFixed(1) + '%';
-      s.style.fontSize = rand(18, 40).toFixed(0) + 'px';
-      const d = rand(11, 24);
+      s.style.fontSize = rand(18, 36).toFixed(0) + 'px';
+      const d = rand(12, 24);
       s.style.animationDuration = d.toFixed(1) + 's';
       s.style.animationDelay = (-rand(0, d)).toFixed(1) + 's';
       box.appendChild(s);
@@ -744,8 +903,9 @@
       const em = document.createElement('span'); em.className = 'em'; em.textContent = ch.e; em.setAttribute('aria-hidden', 'true');
       const body = document.createElement('div');
       const t = document.createElement('strong'); t.textContent = ch.t;
+      const k = document.createElement('span'); k.className = 'k'; k.textContent = ch.k;
       const d = document.createElement('span'); d.className = 'd'; d.textContent = ch.d;
-      body.append(t, d);
+      body.append(t, k, d);
       li.append(em, body);
       ul.appendChild(li);
     });
@@ -765,7 +925,7 @@
     if (e.key === 'Escape') { closeModal(); return; }
     if (e.code !== 'Space' || e.repeat) return;
     const el = document.activeElement;
-    if (el && el.tagName === 'BUTTON' && el !== document.body) return; // the button handles it
+    if (el && el.tagName === 'BUTTON' && !el.disabled) return; // the focused button handles it
     e.preventDefault();
     spin();
   });
